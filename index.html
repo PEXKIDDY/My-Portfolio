@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Jayanth – Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #9f42ff;
+      width: 0%;
+      z-index: 2000;
+      transition: width 0.2s ease-out;
+    }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0b0b0b;
+      color: #f0f0f0;
+    }
+    nav {
+      background-color: #1a1a2e;
+      padding: 2rem 3rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background: url('parrot-bg.png') center center / cover no-repeat;
+      padding-top: 4rem;
+    }
+    .image-wrapper {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin-bottom: 1rem;
+      z-index: 2;
+    }
+    .image-wrapper img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #9f42ff;
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #c77dff;
+      z-index: 2;
+   
+    }
+    .links-boxes {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+      z-index: 2;
+    }
+    .links-boxes a {
+      padding: 0.6rem 1.2rem;
+      background-color: #1e1e3f;
+      border: 1px solid #9f42ff;
+      color: #c77dff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .links-boxes a:hover {
+      transform: scale(1.05);
+      background-color: #2b2b4f;
+    }
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    #about h2, #projects h2, #education h2, #certifications h2, #skills h2 {
+      color: #9f42ff;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .about-box, .certs-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(159, 66, 255, 0.2);
+    }
+    .timeline {
+      position: relative;
+      margin: 3rem auto;
+      padding: 2rem;
+      max-width: 800px;
+      border-left: 4px solid #9f42ff;
+      text-align: left;
+    }
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      background-color: #9f42ff;
+      border-radius: 50%;
+      position: absolute;
+      left: -10px;
+      top: 5px;
+    }
+    .timeline-content h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #9f42ff;
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .project-card {
+      background: #1e1e3f;
+      border: 1px solid #9f42ff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 250px;
+      color: #f0f0f0;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      background: #2b2b4f;
+    }
+    .project-card a {
+      color: #c77dff;
+      text-decoration: none;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+    .skills-grid div {
+      background: #1e1e3f;
+      border: 1px solid #9f42ff;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="image-wrapper">
+      <img src="C:\Users\JAYANTH\Desktop\Portfilio\WhatsApp Image 2025-07-21 at 01.37.59_7fa38804.jpg" alt="Your Photo">
+    </div>
+    <h1>Sai Jayanth Kothamadduri</h1>
+    <h2>CyberSecurity Analyst</h2>
+    <h2>Bengaluru, India</h2>
+    <div class="links-boxes">
+      <a href="https://linkedin.com/in/sai-jayanth-066589242" target="_blank">LinkedIn</a>
+      <a href="https://github.com/PEXKIDDY" target="_blank">GitHub</a>
+      <a href="https://medium.com/@saijayanth25dec2003">Medium-Blogs</a>
+      <a href="mailto:saijayanth9247@gmail.com">Email</a>     
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p>
+        I'm a cybersecurity enthusiast with strong hands-on experience in threat detection, vulnerability assessment, and malware analysis. I hold a Bachelor's degree in Computer Science with a specialization in Cybersecurity. Passionate about protecting digital ecosystems, I actively engage in Blue Team program Labs and build security tools using modern tech stacks. My goal is to continuously evolve as a skilled cybersecurity professional and contribute to building safer digital infrastructure.
+      </p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>10th Grade (Secondary)</h3>
+          <p>DR KKR GOWTHAM – 2017 – CGPA: 9.7</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>12th Grade (Intermediate)</h3>
+          <p>Narayana Junior College – 2019 – Score: 899/1000</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>B.Tech in Computer Science (Cybersecurity)</h3>
+          <p>Manipal Institute of Technology – 2025 – CGPA: 6.95</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>Chief & Headof Management – THE CYBER PIONEER (May 2025 –Present)</h3>
+        <p>Oversaw community operations, strategic partnerships, and cybersecurity initiatives driving knowledge and innovation.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>Cyber & Forensics Software Solutions –Cybersecurity Intern </h3>
+        <p>Assisted in real-time threat detection, forensic analysis, and vulnerability assessments.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certs-box">
+      <ul>
+        <br><li>CompTIA Security+  -  (In Progress)</li></br>
+        <br><li>Google Cybersecurity Professional Certificate  - (Completed)</li></br>
+        <br><li>AWS Cloud Practitioner Essenstials - (Completed)</li></br>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <strong>Languages & Databases:</strong>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>MySQL</li>
+          <li>HTML & CSS</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Tools & Platforms:</strong>
+        <ul>
+          <li>GitHub</li>
+          <li>VS Code</li>
+          <li>FastAPI</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Network & Web Security:</strong>
+        <ul>
+          <li>Wireshark</li>
+          <li>Nmap</li>
+          <li>Burp Suite</li>
+          <li>Snort IDS/IPS</li>
+          <li>OWASP Top 10</li>
+          <li>Vulnerability Analysis</li>
+          <li>RBAC</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Other Skills:</strong>
+        <ul>
+          <li>Threat Intelligence</li>
+          <li>Malware Analysis</li>
+          <li>SIEM Monitoring</li>
+          <li>Data Encryption</li>
+          <li>Incident Response</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <a href="https://github.com/PEXKIDDY/Secure-URL-Scan-Phishing-link-QR-generator" target="_blank">
+          <h3>Secure URL Scanner</h3>
+          <p>Phishing link detector & QR generator (Python)</p>
+        </a>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/PEXKIDDY/Keylogger" target="_blank">
+          <h3>Keylogger</h3>
+          <p>Captures keystrokes system-wide (Python)</p>
+        </a>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/PEXKIDDY/Intrusion-alert-system" target="_blank">
+          <h3>Intrusion Alert System</h3>
+          <p>FastAPI honeypot for login alerts</p>
+        </a>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/PEXKIDDY/Project_security" target="_blank">
+          <h3>Project SECURITY</h3>
+          <p>PHP-based web security system</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<section id="achievements" class="section">
+    <h2>Achievements</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>TURINGER 2025 - ACM Student Chapter</h3>
+        <p>Achieved The Best Informative Poster for Research Presentation in cybersecurity .</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>General Championship - MIT BLR </h3>
+        <p>It was the First GC in my University and I have Contributed in volley ball competition and  we secured house Trophy .</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>Open Source Contributor</h3>
+        <p> Contributed to multiple cybersecurity open-source tools on GitHub.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+    });
+  </script>
+</body>
+</html>
